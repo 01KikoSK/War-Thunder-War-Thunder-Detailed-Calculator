@@ -1,0 +1,1 @@
+# War-Thunder-War-Thunder-Detailed-Calculator
