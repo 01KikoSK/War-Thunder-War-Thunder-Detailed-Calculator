@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>War Thunder Detailed Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>War Thunder Detailed Calculator</h1>
+        
+        <h2>Silver Lions Calculation</h2>
+        <div>
+            <label for="sl_battles">Number of Battles:</label>
+            <input type="number" id="sl_battles" placeholder="Enter number of battles">
+        </div>
+        <div>
+            <label for="avg_sl">Average Silver Lions per Battle:</label>
+            <input type="number" id="avg_sl" placeholder="Enter average Silver Lions per battle">
+        </div>
+        <div>
+            <button onclick="calculateSilverLions()">Calculate Total Silver Lions</button>
+        </div>
+        <div>
+            <label for="sl_result">Total Silver Lions:</label>
+            <input type="number" id="sl_result" readonly>
+        </div>
+
+        <h2>Golden Eagles Calculation</h2>
+        <div>
+            <label for="ge_packs">Number of Purchased Packs:</label>
+            <input type="number" id="ge_packs" placeholder="Enter number of purchased packs">
+        </div>
+        <div>
+            <label for="avg_ge">Average Golden Eagles per Pack:</label>
+            <input type="number" id="avg_ge" placeholder="Enter average Golden Eagles per pack">
+        </div>
+        <div>
+            <button onclick="calculateGoldenEagles()">Calculate Total Golden Eagles</button>
+        </div>
+        <div>
+            <label for="ge_result">Total Golden Eagles:</label>
+            <input type="number" id="ge_result" readonly>
+        </div>
+
+        <h2>Research Points Calculation</h2>
+        <div>
+            <label for="rp_matches">Number of Matches:</label>
+            <input type="number" id="rp_matches" placeholder="Enter number of matches">
+        </div>
+        <div>
+            <label for="avg_rp">Average Research Points per Match:</label>
+            <input type="number" id="avg_rp" placeholder="Enter average Research Points per match">
+        </div>
+        <div>
+            <button onclick="calculateResearchPoints()">Calculate Total Research Points</button>
+        </div>
+        <div>
+            <label for="rp_result">Total Research Points:</label>
+            <input type="number" id="rp_result" readonly>
+        </div>
+    </div>
+
+    <script>
+        function calculateSilverLions() {
+            let slBattles = document.getElementById('sl_battles').value;
+            let avgSl = document.getElementById('avg_sl').value;
+            let slResult = slBattles * avgSl;
+            document.getElementById('sl_result').value = slResult;
+        }
+
+        function calculateGoldenEagles() {
+            let gePacks = document.getElementById('ge_packs').value;
+            let avgGe = document.getElementById('avg_ge').value;
+            let geResult = gePacks * avgGe;
+            document.getElementById('ge_result').value = geResult;
+        }
+
+        function calculateResearchPoints() {
+            let rpMatches = document.getElementById('rp_matches').value;
+            let avgRp = document.getElementById('avg_rp').value;
+            let rpResult = rpMatches * avgRp;
+            document.getElementById('rp_result').value = rpResult;
+        }
+    </script>
+</body>
+</html>
